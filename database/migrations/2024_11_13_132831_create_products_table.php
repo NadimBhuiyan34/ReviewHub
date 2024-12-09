@@ -12,15 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            // $table->foreignUuid('brand_id')->constrained('brands')->onDelete('cascade');
+            $table->uuid('id')->primary(); // Primary key as UUID
             $table->string('name');
-            $table->string('slug')->unique();
-            $table->text('description');
-            $table->decimal('price', 10, 2);
-            $table->decimal('discount_price', 10, 2)->nullable();
+            $table->foreignUuid('brand_id')->constrained('brands')->onDelete('cascade'); 
+            $table->foreignUuid('shop_id')->constrained('shops')->onDelete('cascade'); 
+            $table->foreignUuid('category_id')->constrained('categories')->onDelete('cascade'); 
+            $table->string('type');
             $table->integer('stock');
-            $table->boolean('is_active')->default(true);
+            $table->string('status'); // e.g., 'active' or 'inactive'
             $table->timestamps();
         });
     }

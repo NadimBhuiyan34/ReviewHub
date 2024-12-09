@@ -16,10 +16,7 @@ class SliderController extends Controller
      */
     public function index()
     {
-        $sliders = Slider::select('id', 'title', 'description', 'image', 'status')
-            ->latest()
-            ->paginate(10);
-
+        $sliders = Slider::all();
         return view('AdminPages.Slider.index', compact('sliders'));
     }
 
@@ -30,14 +27,13 @@ class SliderController extends Controller
     {
         $data = $request->validated();
 
-        // Handle image upload
+        // Upload image
         if ($request->hasFile('image')) {
-            $data['image'] = $request->file('image')->storeAs('public/sliders', $request->file('image')->getClientOriginalName());
+            $data['image'] = $request->file('image')->store('sliders', 'public');
         }
 
         Slider::create($data);
-
-        return redirect()->back()->with('success', 'Slider added successfully!');
+        return redirect()->back()->with('success', 'Slider created successfully.');
     }
 
     /**
@@ -47,19 +43,13 @@ class SliderController extends Controller
     {
         $data = $request->validated();
 
-        // Handle image replacement
+        // Update image if provided
         if ($request->hasFile('image')) {
-            // Delete the old image if it exists
-            if ($slider->image && file_exists(public_path('storage/' . $slider->image))) {
-                unlink(public_path('storage/' . $slider->image));
-            }
-
-            $data['image'] = $request->file('image')->storeAs('public/sliders', $request->file('image')->getClientOriginalName());
+            $data['image'] = $request->file('image')->store('sliders', 'public');
         }
 
         $slider->update($data);
-
-        return redirect()->back()->with('success', 'Slider updated successfully!');
+        return redirect()->back()->with('success', 'Slider updated successfully.');
     }
 
     /**
@@ -67,13 +57,7 @@ class SliderController extends Controller
      */
     public function destroy(Slider $slider)
     {
-        // Delete image if it exists
-        if ($slider->image && file_exists(public_path('storage/' . $slider->image))) {
-            unlink(public_path('storage/' . $slider->image));
-        }
-
         $slider->delete();
-
-        return redirect()->back()->with('success', 'Slider deleted successfully!');
+        return redirect()->back()->with('success', 'Slider deleted successfully.');
     }
 }

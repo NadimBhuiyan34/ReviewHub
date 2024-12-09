@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('reviews', function (Blueprint $table) {
-            $table->string('id')->primary();
-            $table->string('user_name'); // or user_id if you have users
-            $table->text('review_text');
+        Schema::create('shops', function (Blueprint $table) {
+            $table->uuid('id')->primary(); // Primary key as UUID
+            $table->string('name');
+            $table->string('status'); // e.g., 'active' or 'inactive'
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('reviews');
+        Schema::dropIfExists('shops');
     }
 };

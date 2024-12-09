@@ -4,6 +4,7 @@ namespace App\Http\Controllers\ClientControllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -16,6 +17,7 @@ class HomeController extends Controller
         $electronics = Category::select('id', 'name')->where('type', 'Electronics')->get();
         $furnitures = Category::select('id', 'name')->where('type', 'Furniture')->get();
         $clothings = Category::select('id', 'name')->where('type', 'Clothing')->get();
+        $sliders = Slider::all();
     
         // Pass the categories to the view
         return view('ClientPages/home', [
@@ -23,6 +25,7 @@ class HomeController extends Controller
             'electronics' => $electronics,
             'furnitures' => $furnitures,
             'clothings' => $clothings,
+            'sliders' => $sliders,
         ]);
     }
     

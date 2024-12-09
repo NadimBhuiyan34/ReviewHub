@@ -20,7 +20,7 @@ class Slider extends Model
     protected $primaryKey = 'id';
 
     // The attributes that are mass assignable
-    protected $fillable = ['title', 'description', 'image', 'status', 'order'];
+    protected $fillable = ['title', 'image', 'description'];
 
     // Automatically generate a UUID for t
 }

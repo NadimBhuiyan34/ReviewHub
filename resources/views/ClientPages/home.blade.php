@@ -5,7 +5,7 @@
      <main class="main">
 
 
-         <x-client-components.slider />
+         <x-client-components.slider :sliders="$sliders" />
          <x-client-components.platform />
          <x-client-components.feature-product />
          <x-client-components.subscribe />

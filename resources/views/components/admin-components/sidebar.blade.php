@@ -94,7 +94,7 @@
       <li class="nav-heading">Pages</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
+        <a class="nav-link collapsed" href="{{route('products.index')}}">
           <i class="bi bi-person"></i>
           <span>Add Product</span>
         </a>
@@ -107,7 +107,7 @@
         </a>
       </li><!-- End F.A.Q Page Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{{route('sliders.index')}}">
+        <a class="nav-link collapsed" href="{{route('sliders.index')}}"> 
           <i class="bi bi-question-circle"></i>
           <span>Slider</span>
         </a>
