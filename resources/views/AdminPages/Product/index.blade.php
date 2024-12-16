@@ -20,7 +20,7 @@
 
 
         <div class="container">
-            <h1>Slider Management</h1>
+            <h1>Product Managment</h1>
             
             <a href="{{route('products.create')}}" class="btn btn-sm btn-primary">Add Product</a>
 

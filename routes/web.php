@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\AdminControllers\BrandController;
 use App\Http\Controllers\AdminControllers\CategoryController;
 use App\Http\Controllers\AdminControllers\DashboardController;
 use App\Http\Controllers\AdminControllers\ProductController;
+use App\Http\Controllers\AdminControllers\ShopController;
 use App\Http\Controllers\AdminControllers\SliderController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ClientControllers\HomeController;
@@ -31,6 +33,8 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('categories', CategoryController::class);
+    Route::resource('brands', BrandController::class);
+    Route::resource('shops', ShopController::class);
     
     Route::resource('sliders', SliderController::class);
     Route::resource('products', ProductController::class);

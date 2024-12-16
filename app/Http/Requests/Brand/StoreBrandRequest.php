@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Brand;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -11,7 +11,7 @@ class StoreBrandRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,17 @@ class StoreBrandRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|string|max:255|unique:brands,name',
+            'status' => 'required|boolean',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'The brand name is required.',
+            'status.required' => 'The status is required.',
+            'status.boolean' => 'The status must be a true or false value.',
         ];
     }
 }

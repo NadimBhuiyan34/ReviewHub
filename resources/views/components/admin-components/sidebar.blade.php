@@ -101,6 +101,18 @@
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
+        <a class="nav-link collapsed" href="{{route('brands.index')}}">
+          <i class="bi bi-question-circle"></i>
+          <span>Add Brand</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{{route('shops.index')}}">
+          <i class="bi bi-question-circle"></i>
+          <span>Add Shop</span>
+        </a>
+      </li><!-- End F.A.Q Page Nav -->
+      <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('categories.index')}}">
           <i class="bi bi-question-circle"></i>
           <span>Add Category</span>
