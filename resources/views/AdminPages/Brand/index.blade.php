@@ -15,12 +15,12 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
-
+{{-- this is comment --}}
 
         <section class="section">
             <div class="row">
                 <div class="col-lg-12">
-                    <button type="button" class="btn btn-primary mb-4" data-bs-toggle="modal"
+                    <button type="button" class="mb-4 btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#categoryModal">
                         Add Brand
                     </button>
@@ -30,7 +30,7 @@
 
 
                             <!-- Table with stripped rows -->
-                            <table class="table table-bordered table-striped table-hover w-100 datatable mt-3">
+                            <table class="table mt-3 table-bordered table-striped table-hover w-100 datatable">
                                 <thead class="table-light">
                                     <tr>
                                         <th class="text-center">Name</th>
