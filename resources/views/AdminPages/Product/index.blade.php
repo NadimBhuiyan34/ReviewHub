@@ -16,31 +16,33 @@
             </div>
         @endif
 
-
-
-
         <div class="container">
-            <h1>Product Managment</h1>
-            
-            <a href="{{route('products.create')}}" class="btn btn-sm btn-primary">Add Product</a>
+            <h1>Product Management</h1>
+
+            <a href="{{ route('products.create') }}" class="btn btn-sm btn-primary">Add Product</a>
 
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Title</th>
+                        <th>Name</th>
                         <th>Image</th>
                         <th>Description</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
-                
+                <tbody>
+                    @foreach ($products as $product)
+                        <tr>
+                            <td>{{ $product->name }}</td>    
+                            
+                        </tr>
+                    @endforeach
+                </tbody>
             </table>
+
+            {{-- Pagination --}}
+            {{ $products->links() }}
         </div>
-
-        
-
-       
-
 
     </section>
 </x-admin-components.layout>
