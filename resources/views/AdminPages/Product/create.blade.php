@@ -75,10 +75,16 @@
                         </div>
         
                         <div class="mb-3">
-                            <label for="type" class="form-label">Type</label>
-                            <input type="text" class="form-control" id="type" name="type" placeholder="Enter product type" required>
+                            <label for="type_id" class="form-label">Type</label>
+                            <select class="form-select" id="type_id" name="type" required>
+                                <option value="" disabled selected>Select a Type</option>
+                                <option value="Featured" >Featured</option>
+                                <option value="Popular" >Popular</option>
+                                <option value="Best Seller" >Best Seller</option>
+                               
+                            </select>
                             <div class="invalid-feedback">
-                                Please provide a type.
+                                Please select a type.
                             </div>
                         </div>
         

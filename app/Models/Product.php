@@ -29,6 +29,7 @@ class Product extends Model
     {
         return $this->hasOne(ProductDetail::class);
     }
+    
  
      /**
       * Relationship: Product has many Variants

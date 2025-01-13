@@ -1,7 +1,8 @@
- <x-client-components.layout title=" Home Page" :categories="$categories" :electronics="$electronics" :furnitures="$furnitures" :clothings="$clothings">
+ <x-client-components.layout title=" Home Page" :categories="$categories" :electronics="$electronics" :furnitures="$furnitures" :clothings="$clothings" >
      <x-slot:title>
          HomePage-ReviewHub
      </x-slot>
+     
      <main class="main">
 
 
@@ -11,7 +12,7 @@
          <x-client-components.subscribe />
          <x-client-components.premium />
          <x-client-components.service-details />
-         <x-client-components.popular-product />
+         <x-client-components.popular-product :products="$products" />
          <x-client-components.toprate />
          <x-client-components.blogs />
          {{-- <x-client-components.news-letter/> --}}
