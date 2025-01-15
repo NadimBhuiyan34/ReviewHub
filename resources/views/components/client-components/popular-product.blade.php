@@ -1,4 +1,7 @@
 @props(['products'])
+
+ 
+
 <div class="container popular">
     <hr class="mb-5">
 
@@ -10,15 +13,18 @@
 
     <div class="row products">
         @foreach ($products as $product)
+        
         <div class="col-6 col-md-4 col-lg-3 col-xl-4 col">
             <div class="product product-3 text-center">
                 <figure class="product-media">
                     <span class="product-label label-sale">Sale</span>
+                    
                     <a href="product.html">
-                        <img src="{{ asset('storage/' . $product->productDetail->image) }}" alt="Product image" class="product-image">
-
+                        <img src="{{ $product->productDetail ? asset('storage/' . $product->productDetail->image) : 'https://st4.depositphotos.com/2495409/19919/i/450/depositphotos_199193024-stock-photo-new-product-concept-illustration-isolated.jpg' }}" alt="Product image" class="product-image">
                     </a>
-
+                    
+                    
+                    
                     <div class="product-action-vertical">
                         <a href="#" class="btn-product-icon btn-wishlist btn-expandable"><span>add to wishlist</span></a>
                     </div><!-- End .product-action-vertical -->
@@ -30,8 +36,11 @@
                     </div><!-- End .product-cat -->
                     <h3 class="product-title"><a href="{{route('product.details')}}">{{ $product->name }}</a></h3><!-- End .product-title -->
                     <div class="product-price">
-                        <span class="new-price">{{  $product->productDetail->price }}</span>
-                        <span class="old-price">Was $330.00</span>
+                        <span class="new-price">{{ $product->productDetail ? $product->productDetail->price : 'নির্ধারিত দাম নেই' }}</span>
+
+                        {{-- <span class="new-price">{{  $product->productDetail->model_no}}</span> --}}
+                        <span class="new-price">{{  $product->stock}}</span>
+                       
                     </div><!-- End .product-price -->
                 </div><!-- End .product-body -->
 

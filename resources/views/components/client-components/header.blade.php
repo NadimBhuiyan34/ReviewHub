@@ -9,10 +9,12 @@
                     <i class="icon-bars"></i>
                 </button>
 
-                <a href="{{ route('home.index') }}" class="logo">
-                
-                    <span class="d-none d-lg-block" style="font-size: 20px">ReviewHub</span>
+                <a href="{{ route('home.index') }}" class="logo text-decoration-none">
+                    <span class="d-none d-lg-block" style="font-size: 24px; font-weight: bold; font-family: 'Poppins', sans-serif; background: linear-gradient(to right, white, #2196f3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 2px 2px 5px rgba(0,0,0,0.2);">
+                        Review<span style="color: #f44336;">Hub</span>
+                    </span>
                 </a>
+                
             </div><!-- End .header-left -->
 
             <div class="header-center">

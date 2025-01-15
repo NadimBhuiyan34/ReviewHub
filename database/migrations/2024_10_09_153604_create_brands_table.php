@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('brands', function (Blueprint $table) {
-            $table->uuid('id')->primary(); // Primary key as UUID
+            $table->uuid('id')->primary(); 
             $table->string('name');
-            $table->string('status'); // e.g., 'active' or 'inactive'
+            $table->string('status');
             $table->timestamps();
         });
     }

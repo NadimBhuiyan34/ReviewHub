@@ -2,13 +2,13 @@
      <x-slot:title>
          HomePage-ReviewHub
      </x-slot>
-     
+ 
      <main class="main">
-
+       
 
          <x-client-components.slider :sliders="$sliders" />
          <x-client-components.platform />
-         <x-client-components.feature-product />
+         <x-client-components.feature-product :featured="$featured" :seller="$seller"/>
          <x-client-components.subscribe />
          <x-client-components.premium />
          <x-client-components.service-details />

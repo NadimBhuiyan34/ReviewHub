@@ -19,6 +19,17 @@ class HomeController extends Controller
         ->where('status', 'active')
         ->where('type', 'Popular')
         ->get();
+        $featured = Product::select('id', 'name', 'stock')
+        ->with('productDetail') 
+        ->where('status', 'active')
+        ->where('type', 'Featured')
+        ->get();
+        $seller = Product::select('id', 'name', 'stock')
+        ->with('productDetail') 
+        ->where('status', 'active')
+        ->where('type', 'Best Seller')
+        ->get();
+        
         $categories = Category::select('id', 'name')->where('type', 'Common')->get();
         $electronics = Category::select('id', 'name')->where('type', 'Electronics')->get();
         $furnitures = Category::select('id', 'name')->where('type', 'Furniture')->get();
@@ -29,6 +40,8 @@ class HomeController extends Controller
     
         // Pass the categories to the view
         return view('ClientPages/home', [
+            'seller' => $seller,
+            'featured' => $featured,
             'products' => $products,
             'categories' => $categories,
             'electronics' => $electronics,
