@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminControllers\DashboardController;
 use App\Http\Controllers\AdminControllers\ProductController;
 use App\Http\Controllers\AdminControllers\ShopController;
 use App\Http\Controllers\AdminControllers\SliderController;
+use App\Http\Controllers\ClientControllers\AllProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ClientControllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -27,7 +28,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
     // Profile routes
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update'); 
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('categories', CategoryController::class);
     Route::resource('brands', BrandController::class);
@@ -37,9 +38,11 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::resource('products', ProductController::class);
 });
 
+Route::resource('allproducts', AllProductController::class)->only(['index', 'show']);
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
 Route::get('/product', function () {
     return view('ClientPages/product_details');  
 })->name('product.details');
+
 require __DIR__.'/auth.php';

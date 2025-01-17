@@ -3,7 +3,7 @@
         AdminDashboard - ReviewHub
     </x-slot>
     <x-slot:pagetitle>
-        Slider
+        Product
     </x-slot>
 
     <section class="section dashboard">
@@ -17,24 +17,39 @@
         @endif
 
         <div class="container">
-            <h1>Product Management</h1>
+             
 
-            <a href="{{ route('products.create') }}" class="btn btn-sm btn-primary">Add Product</a>
+            <a href="{{ route('products.create') }}" class="btn btn-sm btn-primary mb-3">Add Product</a>
 
-            <table class="table">
+            <table class="table table-bordered">
                 <thead>
                     <tr>
                         <th>Name</th>
                         <th>Image</th>
-                        <th>Description</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($products as $product)
                         <tr>
-                            <td>{{ $product->name }}</td>    
-                            
+                            <td>{{ $product->name }}</td>
+                            <td>
+                                @if ($product->productDetail->image)
+                                    <img src="{{ asset('storage/' . $product->productDetail->image) }}" alt="{{ $product->name }}" class="img-thumbnail" style="width: 100px; height: 100px;">
+                                @else
+                                    <span class="text-muted">No Image</span>
+                                @endif
+                            </td>
+                          
+                            <td>
+                                <a href="{{ route('products.show', $product->id) }}" class="btn btn-sm btn-info">Show</a>
+                                <a href="{{ route('products.edit', $product->id) }}" class="btn btn-sm btn-warning">Edit</a>
+                                <form action="{{ route('products.destroy', $product->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this product?');">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

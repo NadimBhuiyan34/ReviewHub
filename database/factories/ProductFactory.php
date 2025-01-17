@@ -28,7 +28,7 @@ class ProductFactory extends Factory
             'brand_id' => Brand::inRandomOrder()->first()->id,
             'shop_id' => Shop::inRandomOrder()->first()->id,
             'category_id' => Category::inRandomOrder()->first()->id,
-            'type' => $this->faker->randomElement(['Featured', 'Popular', 'Best Seller']),
+            'type' => $this->faker->randomElement(['Popular', 'Best Seller']),
             'stock' => $this->faker->numberBetween(1, 1000),
             'status' => $this->faker->randomElement(['active', 'inactive']),
         ];

@@ -7,7 +7,8 @@
        
 
          <x-client-components.slider :sliders="$sliders" />
-         <x-client-components.platform />
+         {{-- <x-client-components.platform /> --}}
+         {{-- <x-client-components.new_arrival/> --}}
          <x-client-components.feature-product :featured="$featured" :seller="$seller"/>
          <x-client-components.subscribe />
          <x-client-components.premium />

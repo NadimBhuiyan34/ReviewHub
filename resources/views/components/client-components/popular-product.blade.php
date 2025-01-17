@@ -19,7 +19,7 @@
                 <figure class="product-media">
                     <span class="product-label label-sale">Sale</span>
                     
-                    <a href="product.html">
+                    <a href="{{ route('allproducts.show', ['allproduct' => $product->id]) }}">
                         <img src="{{ $product->productDetail ? asset('storage/' . $product->productDetail->image) : 'https://st4.depositphotos.com/2495409/19919/i/450/depositphotos_199193024-stock-photo-new-product-concept-illustration-isolated.jpg' }}" alt="Product image" class="product-image">
                     </a>
                     

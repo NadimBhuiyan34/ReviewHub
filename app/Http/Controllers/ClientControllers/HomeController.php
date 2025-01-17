@@ -19,11 +19,14 @@ class HomeController extends Controller
         ->where('status', 'active')
         ->where('type', 'Popular')
         ->get();
+
         $featured = Product::select('id', 'name', 'stock')
         ->with('productDetail') 
         ->where('status', 'active')
         ->where('type', 'Featured')
-        ->get();
+        ->first();
+        
+        
         $seller = Product::select('id', 'name', 'stock')
         ->with('productDetail') 
         ->where('status', 'active')

@@ -95,32 +95,33 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('products.index')}}">
-          <i class="bi bi-person"></i>
+          <i class="bi bi-bag"></i>
           <span>Add Product</span>
         </a>
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('brands.index')}}">
-          <i class="bi bi-question-circle"></i>
+          <i class="bi bi-shield-check"></i>
           <span>Add Brand</span>
         </a>
       </li><!-- End F.A.Q Page Nav -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('shops.index')}}">
-          <i class="bi bi-question-circle"></i>
+          <i class="bi bi-shop"></i>
           <span>Add Shop</span>
         </a>
       </li><!-- End F.A.Q Page Nav -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('categories.index')}}">
-          <i class="bi bi-question-circle"></i>
+          <i class="bi bi-columns"></i>
+
           <span>Add Category</span>
         </a>
       </li><!-- End F.A.Q Page Nav -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="{{route('sliders.index')}}"> 
-          <i class="bi bi-question-circle"></i>
+          <i class="bi bi-sliders"></i>
           <span>Slider</span>
         </a>
       </li><!-- End F.A.Q Page Nav -->

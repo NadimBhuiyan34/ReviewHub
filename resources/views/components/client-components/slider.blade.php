@@ -23,7 +23,7 @@
                                 
                             </div>
                             <div class="content">
-                                <h3>{{$slider->title}}</h3>
+                                {{-- <h3>{{$slider->title}}</h3> --}}
                             </div>
                             {{-- <div class="action">
                                 <a href="category.html">discover now</a>

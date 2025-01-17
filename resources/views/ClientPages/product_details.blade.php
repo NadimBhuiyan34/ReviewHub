@@ -1,4 +1,4 @@
-<x-client-components.layout title=" Home Page">
+<x-client-components.layout title="Product Details" :categories="$categories" :electronics="$electronics" :furnitures="$furnitures" :clothings="$clothings" >
     <x-slot:title>
         Product-ReviewHub
     </x-slot>
@@ -22,23 +22,7 @@
                                             </a>
                                         </figure><!-- End .product-main-image -->
 
-                                        <div id="product-zoom-gallery" class="product-image-gallery">
-                                            <a class="product-gallery-item active" href="#" data-image="assets/images/products/single/1.jpg" data-zoom-image="assets/images/products/single/1-big.jpg">
-                                                <img src="assets/images/products/single/1-small.jpg" alt="product side">
-                                            </a>
-
-                                            <a class="product-gallery-item" href="#" data-image="assets/images/products/single/2.jpg" data-zoom-image="assets/images/products/single/2-big.jpg">
-                                                <img src="assets/images/products/single/2-small.jpg" alt="product cross">
-                                            </a>
-
-                                            <a class="product-gallery-item" href="#" data-image="assets/images/products/single/3.jpg" data-zoom-image="assets/images/products/single/3-big.jpg">
-                                                <img src="assets/images/products/single/3-small.jpg" alt="product with model">
-                                            </a>
-
-                                            <a class="product-gallery-item" href="#" data-image="assets/images/products/single/4.jpg" data-zoom-image="assets/images/products/single/4-big.jpg">
-                                                <img src="assets/images/products/single/4-small.jpg" alt="product back">
-                                            </a>
-                                        </div><!-- End .product-image-gallery -->
+                                       
                                     </div><!-- End .row -->
                                 </div><!-- End .product-gallery -->
                             </div><!-- End .col-md-6 -->
@@ -64,64 +48,19 @@
 
                                     <div class="details-filter-row details-row-size">
                                         <label>Color:</label>
-
-                                        <div class="product-nav product-nav-thumbs">
-                                            <a href="#" class="active">
-                                                <img src="assets/images/products/single/1-thumb.jpg" alt="product desc">
-                                            </a>
-                                            <a href="#">
-                                                <img src="assets/images/products/single/2-thumb.jpg" alt="product desc">
-                                            </a>
-                                        </div><!-- End .product-nav -->
+ 
                                     </div><!-- End .details-filter-row -->
 
-                                    <div class="details-filter-row details-row-size">
-                                        <label for="size">Size:</label>
-                                        <div class="select-custom">
-                                            <select name="size" id="size" class="form-control">
-                                                <option value="#" selected="selected">Select a size</option>
-                                                <option value="s">Small</option>
-                                                <option value="m">Medium</option>
-                                                <option value="l">Large</option>
-                                                <option value="xl">Extra Large</option>
-                                            </select>
-                                        </div><!-- End .select-custom -->
+                                   
 
-                                        <a href="#" class="size-guide"><i class="icon-th-list"></i>size guide</a>
-                                    </div><!-- End .details-filter-row -->
-
-                                    <div class="details-filter-row details-row-size">
-                                        <label for="qty">Qty:</label>
-                                        <div class="product-details-quantity">
-                                            <input type="number" id="qty" class="form-control" value="1" min="1" max="10" step="1" data-decimals="0" required>
-                                        </div><!-- End .product-details-quantity -->
-                                    </div><!-- End .details-filter-row -->
-
+                                   0
                                     <div class="product-details-action">
-                                        <a href="#" class="btn-product btn-cart"><span>add to cart</span></a>
+                                        <a href="#" class="btn btn-sm btn-primary"><span>add to cart</span></a>
 
-                                        <div class="details-action-wrapper">
-                                            <a href="#" class="btn-product btn-wishlist" title="Wishlist"><span>Add to Wishlist</span></a>
-                                            <a href="#" class="btn-product btn-compare" title="Compare"><span>Add to Compare</span></a>
-                                        </div><!-- End .details-action-wrapper -->
+                                     
                                     </div><!-- End .product-details-action -->
 
-                                    <div class="product-details-footer">
-                                        <div class="product-cat">
-                                            <span>Category:</span>
-                                            <a href="#">Women</a>,
-                                            <a href="#">Dresses</a>,
-                                            <a href="#">Yellow</a>
-                                        </div><!-- End .product-cat -->
-
-                                        <div class="social-icons social-icons-sm">
-                                            <span class="social-label">Share:</span>
-                                            <a href="#" class="social-icon" title="Facebook" target="_blank"><i class="icon-facebook-f"></i></a>
-                                            <a href="#" class="social-icon" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>
-                                            <a href="#" class="social-icon" title="Instagram" target="_blank"><i class="icon-instagram"></i></a>
-                                            <a href="#" class="social-icon" title="Pinterest" target="_blank"><i class="icon-pinterest"></i></a>
-                                        </div>
-                                    </div><!-- End .product-details-footer -->
+                                        
                                 </div><!-- End .product-details -->
                             </div><!-- End .col-md-6 -->
                         </div><!-- End .row -->
