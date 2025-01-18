@@ -8,35 +8,10 @@
             <a class="link" href="#">See All Products</a>
         </div>
 
-        <div class="row">
-            @if ($featured)
-            <div class="col-lg-4 col-md-4">
-                <div class="product-lg">
-                    <figure class="product-media">
-                        <span class="product-label label-limited">limited time sale</span>
-                        <a href="{{ route('allproducts.show', $featured->id) }}">
-                            <img src="{{ $featured->productDetail ? asset('storage/' . $featured->productDetail->image) : 'https://st4.depositphotos.com/2495409/19919/i/450/depositphotos_199193024-stock-photo-new-product-concept-illustration-isolated.jpg' }}" alt="Product image" class="product-image">
-                        </a>
-
-                    </figure><!-- End .product-media -->
-
-                    <div class="product-body">
-                        {{-- <h3 class="save-price"><span>Save $64.00</span></h3> --}}
-                        <h3 class="product-title"><a href="product.html">{{ $featured->name }}</a></h3><!-- End .product-title -->
-                        <div class="product-price">
-                            <span class="new-price">{{ $featured->productDetail->price }}</span>
-                            
-                        </div><!-- End .product-price -->
-                        <div class="action">
-                            <a href="category.html">shop now</a>
-                        </div>
-                    </div><!-- End .product-body -->
-                </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
-            </div>
-            @else
-            <p class="text-gray-500">No featured product available.</p>
-            @endif
-            <div class="col-lg-8 col-md-8">
+        <div class="row ">
+            
+             
+            <div class="col-lg-12 col-md-12 gap-3">
                 <div class="tab-content">
                     <div>
                         <div class="row products">

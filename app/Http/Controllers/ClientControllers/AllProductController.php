@@ -19,12 +19,18 @@ class AllProductController extends Controller
             'productReview',
         ]);
 
+        $related_products = Product::select('id', 'name', 'stock')->with('productDetail')
+        ->where('category_id', $product->category_id)
+        ->where('status', 'active')->take(10)->get();
+
+       
         $categories = Category::select('id', 'name')->where('type', 'Common')->get();
         $electronics = Category::select('id', 'name')->where('type', 'Electronics')->get();
         $furnitures = Category::select('id', 'name')->where('type', 'Furniture')->get();
         $clothings = Category::select('id', 'name')->where('type', 'Clothing')->get();
         // Return a view or JSON response with the product data
         return view('ClientPages/product_details', [
+            'related_products' => $related_products,
             'categories' => $categories,
             'electronics' => $electronics,
             'furnitures' => $furnitures,
