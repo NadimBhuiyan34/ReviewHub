@@ -1,4 +1,4 @@
- <x-client-components.layout title=" Home Page" :categories="$categories" :electronics="$electronics" :furnitures="$furnitures" :clothings="$clothings" >
+ <x-client-components.layout title=" Home Page" :shops="$shops" :categories="$categories" :electronics="$electronics" :furnitures="$furnitures" :clothings="$clothings" >
      <x-slot:title>
          HomePage-ReviewHub
      </x-slot>

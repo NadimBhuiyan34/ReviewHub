@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminControllers\SliderController;
 use App\Http\Controllers\ClientControllers\AllProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ClientControllers\HomeController;
+use App\Http\Controllers\ClientControllers\ReviewController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -39,6 +40,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 });
 
 Route::resource('allproducts', AllProductController::class)->only(['index', 'show']);
+Route::resource('reviews', ReviewController::class)->only(['index', 'store']);
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
 Route::get('/product', function () {

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Slider;
 use App\Models\Product;
+use App\Models\Shop;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -33,6 +34,7 @@ class HomeController extends Controller
         ->where('type', 'Best Seller')
         ->get();
         
+        $shops = Shop::select('id', 'name')->get();
         $categories = Category::select('id', 'name')->where('type', 'Common')->get();
         $electronics = Category::select('id', 'name')->where('type', 'Electronics')->get();
         $furnitures = Category::select('id', 'name')->where('type', 'Furniture')->get();
@@ -43,6 +45,7 @@ class HomeController extends Controller
     
         // Pass the categories to the view
         return view('ClientPages/home', [
+            'shops' => $shops,
             'seller' => $seller,
             'featured' => $featured,
             'products' => $products,

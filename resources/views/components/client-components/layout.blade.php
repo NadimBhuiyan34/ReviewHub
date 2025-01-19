@@ -38,8 +38,8 @@
 
 <body>
     <div class="page-wrapper">
-        @props(['categories', 'electronics', 'furnitures', 'clothings'])
-        <x-client-components.header :categories="$categories" :electronics="$electronics" :furnitures="$furnitures" :clothings="$clothings" />
+        @props(['categories', 'electronics', 'furnitures', 'clothings', 'shops'])
+        <x-client-components.header :shops="$shops" :categories="$categories" :electronics="$electronics" :furnitures="$furnitures" :clothings="$clothings" />
        
         
         <div class="container">

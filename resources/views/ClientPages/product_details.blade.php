@@ -1,4 +1,4 @@
-<x-client-components.layout title="Product Details" :categories="$categories" :electronics="$electronics" :furnitures="$furnitures" :clothings="$clothings" >
+<x-client-components.layout title="Product Details" :shops="$shops" :categories="$categories" :electronics="$electronics" :furnitures="$furnitures" :clothings="$clothings" >
     <x-slot:title>
         Product-Detail-ReviewHub
     </x-slot>
@@ -176,6 +176,46 @@
                                         </div><!-- End .review -->
                                     @endforeach
                                 </div>
+
+                                <div class="container mt-5">
+                                    <div class="card shadow-sm">
+                                        <div class="card-body">
+                                            <h2 class="card-title text-center mb-4">Leave a Review</h2>
+                                            <form action="{{ route('reviews.store') }}" method="POST">
+                                                @csrf <!-- This generates the CSRF token input -->
+                                                <!-- Review Text -->
+                                                <div class="mb-3">
+                                                    <label for="review" class="form-label">Your Review</label>
+                                                    <textarea class="form-control" id="review" name="review" rows="4" placeholder="Write your review here..." required></textarea>
+                                                </div>
+                                                <input type="hidden" name="product_id" value="{{ $product->id }}">
+                            
+                                                <!-- Star Rating -->
+ 
+                                                <!-- Star Rating -->
+                                                <div class="mb-3">
+                                                
+                                                    <select id="ratingSelect" class="form-select" name="rating" required>
+                                                        <option value="" disabled selected>Choose your rating</option>
+                                                        <option value="1">1 Star</option>
+                                                        <option value="2">2 Stars</option>
+                                                        <option value="3">3 Stars</option>
+                                                        <option value="4">4 Stars</option>
+                                                        <option value="5">5 Stars</option>
+                                                    </select>
+                                                </div>
+                            
+                                                <!-- Submit Button -->
+                                                <div class="d-grid">
+                                                    <button type="submit" class="btn btn-primary">Submit Review</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                               
+                                
                                 
                                
                               
@@ -257,6 +297,8 @@
         {{-- <x-client-components.news-letter/> --}}
     </main>
 
+
+     
     <script>
         document.addEventListener('DOMContentLoaded', function () {
     const ctx = document.getElementById('reviewChart').getContext('2d');
